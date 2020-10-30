@@ -1,5 +1,7 @@
 ----- Made by Roids#9757 for The Wack Pack RP - RedM Project -----
 
+----Forked and Fixed Nofications and Finished Conversion for VORP 2.0 Neogreen#7240
+
 
 
 
@@ -17,18 +19,17 @@ AddEventHandler("twprp:fine", function(criminal, fine)
 	local _source = source
 	local _criminal = criminal
 	local _fine = fine
-	--local User = VorpCore.getUser(_criminal)
-	--local Character = User.getUsedCharacter
 	
 
 	local Character = VorpCore.getUser(_source).getUsedCharacter
 	local Receiver = VorpCore.getUser(_criminal).getUsedCharacter
-    local job = Character.job
-    if job == 'police' then
+	local job = Character.job
+	local money = Receiver.job
+	print(money)
+	if job == 'police' then
 			--print('cop working')
 		TriggerClientEvent("vorp:TipBottom", _criminal, 'You have been Fined $'.._fine, 5000)
 		TriggerClientEvent("vorp:TipBottom", _source , Receiver.firstname..' '..Receiver.lastname..' has been Fined $'.._fine, 5000)
-		--TriggerClientEvent("vorp:TipBottom", _source, 'You have Fined $'.._fine, 5000)
 		VORP.removeMoney(_criminal, 0, _fine)
 		Citizen.Wait(2000)
 	end
@@ -38,5 +39,3 @@ AddEventHandler("twprp:fine", function(criminal, fine)
 	end
 	
 end)
-
-
