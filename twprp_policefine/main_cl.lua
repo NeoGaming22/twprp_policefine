@@ -1,5 +1,5 @@
 ----- Made by Roids#9757 for The Wack Pack RP - RedM Project -----
-
+----Edited and fixed notifications and finished conversion for VORP 2.0 Neo Green#7240----
 
 
 
@@ -9,12 +9,4 @@ RegisterCommand("fine", function(source, args)
 	local fine = args[2]
     TriggerServerEvent("twprp:fine", criminal, fine)
 end)
-
-
---RegisterNetEvent('twprp:notacop')
---AddEventHandler('twprp:notacop', function()
---	local _source = source
---	TriggerEvent("vorp:Tip", "Only lawmen can do that. You are not a lawman!", 5000)
---	end)
-
 
